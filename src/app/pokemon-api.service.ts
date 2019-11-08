@@ -9,7 +9,7 @@ export class PokemonApiService {
 
   private pokemonSelected = new BehaviorSubject(null);
 
-  private urlAPI = "https://pokeapi.co/api/v2/pokemon/";
+  private urlAPI = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   constructor(private http: HttpClient) { 
 
@@ -34,5 +34,4 @@ export class PokemonApiService {
   getPokemonById(id:number):Observable<Pokemon> {
     return this.http.get<Pokemon[]>(this.urlAPI + "&results=1page" + id+1);
   }
-
 }
