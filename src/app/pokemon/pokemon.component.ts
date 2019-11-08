@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  @Input() pokemon:Pokemon;
+  pokemon:Pokemon;
   pokemonAsync:Pokemon;
   idRota:number;
 
