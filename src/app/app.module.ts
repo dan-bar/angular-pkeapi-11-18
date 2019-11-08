@@ -11,6 +11,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 const rotas: Routes = [
+
   { path: '', component: PokedexComponent },
   { path: 'pokedex', component: PokedexComponent },
   { path: 'pokedex/:idPokemon', component: PokemonComponent }
