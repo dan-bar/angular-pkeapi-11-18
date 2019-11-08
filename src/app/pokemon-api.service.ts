@@ -16,12 +16,17 @@ export class PokemonApiService {
   }
 
   getPokedex(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.urlAPI); 
-    }
+    return this.http.get<Pokemon[]>(this.urlAPI + "?limit=151"); 
+  }
+   
+  getGeneration():Observable<Pokemon> {
+    return this.http.get<Pokemon[]>(this.urlAPI + "generation/" + id+1);
 
+  }
   getPokemon():Observable<Pokemon> {
     return this.pokemonSelected;
   }
+
   setPokemon(pokemon):Pokemon {
     this.pokemonSelected.next(pokemon);
   }
