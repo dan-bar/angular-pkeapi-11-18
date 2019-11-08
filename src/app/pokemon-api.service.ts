@@ -7,8 +7,27 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class PokemonApiService {
 
-  private pokemonSelected
+  private pokemonSelected = new BehaviorSubject(null);
 
-  constructor() { }
+  private urlAPI = "https://pokeapi.co/api/v2/";
+
+  constructor(private http: HttpClient) { 
+
+  }
+
+  getPokedex(): Observable<Pokemon> {
+    return this.http.get<Pokemon[]>(this.urlAPI + "&results=20"); 
+    }
+
+  getPokemon():Observable<Pokemon> {
+    return this.pokemonSelected;
+  }
+  setPokemon(pokemon):Pokemon {
+    this.pokemonSelected.next(pokemon);
+  }
+
+  getPokemonById(id:number):Observable<Pokemon> {
+    return this.http.get<Pokemon[]>(this.urlAPI + "&results=1page" + id+1);
+  }
 
 }
