@@ -9,11 +9,13 @@ import { PokemonApiService } from './pokemon-api.service';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { GenerationComponent } from './generation/generation.component';
 
 const rotas: Routes = [
   { path: '', component: PokedexComponent },
   { path: 'pokedex', component: PokedexComponent },
-  { path: 'pokedex/:idPokemon', component: PokemonComponent }
+  { path: 'pokedex/:idPokemon', component: PokemonComponent },
+  { path: 'generation', component: GenerationComponent }
 ];
 
 @NgModule({
@@ -31,7 +33,7 @@ const rotas: Routes = [
     HelloComponent, 
     PokedexComponent, 
     SearchComponent, 
-    PokemonComponent 
+    PokemonComponent, GenerationComponent 
     ],
     
   bootstrap:    
@@ -42,6 +44,11 @@ const rotas: Routes = [
   providers: 
   [
     PokemonApiService
+    ],
+
+  exports: 
+  [ 
+    RouterModule 
     ]
 })
 export class AppModule { }
