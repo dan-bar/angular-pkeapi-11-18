@@ -13,22 +13,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const rotas Routes = [
   { path: '', component: PokedexComponent },
   { path: 'pokedex', component: PokedexComponent },
@@ -38,10 +22,11 @@ const rotas Routes = [
 @NgModule({
   imports:      
   [ 
-    BrowserModule, 
+    BrowserModule,
     FormsModule,  
     HttpClientModule, 
-    RouterModule.forRoot(rotas) ],
+    RouterModule.forRoot(rotas) 
+    ],
 
   declarations: 
   [ 
@@ -49,12 +34,17 @@ const rotas Routes = [
     HelloComponent, 
     PokedexComponent, 
     SearchComponent, 
-    PokemonComponent ],
+    PokemonComponent 
+    ],
     
   bootstrap:    
-  [ AppComponent ],
+  [ 
+    AppComponent 
+    ],
 
   providers: 
-  [PokemonApiService]
+  [
+    PokemonApiService
+    ]
 })
 export class AppModule { }
