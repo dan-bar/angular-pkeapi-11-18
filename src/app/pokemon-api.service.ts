@@ -2,21 +2,21 @@ import { Injectable } from '@angular/core';
 import { Pokemon } from './pokemon';
 
 import {Observable, of, BehaviorSubject} from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class PokemonApiService {
 
   private pokemonSelected = new BehaviorSubject(null);
 
-  private urlAPI = "https://pokeapi.co/api/v2/";
+  private urlAPI = "https://pokeapi.co/api/v2/pokemon/";
 
   constructor(private http: HttpClient) { 
 
   }
 
   getPokedex(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.urlAPI + "&results=20"); 
+    return this.http.get<Pokemon[]>(this.urlAPI); 
     }
 
   getPokemon():Observable<Pokemon> {
