@@ -3,10 +3,11 @@
 	padding: 0;
 }
 
-
 @media all {
 	div#pokedex
 	{
+    float: left;
+    padding-left: 50px;
 		width: 750px;
 		margin: 50px auto 0 auto;
 	}
@@ -720,7 +721,7 @@
 		height: 130px;
 		width: 280px;
 		padding: 10px;
-		background-color: #30da0c;
+		background-color: white;
 		z-index: 1;
 		font-size: 13px;
 		font-family: arial, sans-serif;
