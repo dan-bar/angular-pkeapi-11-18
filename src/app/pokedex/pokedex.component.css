@@ -8,7 +8,7 @@
 
 .aPokemons{
   float: left;
-  height: 60px;
+  height: 80px;
   width: 60px;
   margin-left: 20px;
   margin-bottom: 20px;
@@ -16,4 +16,19 @@
 
 .lblPokemoName{
   margin-top: 20px;
+}
+
+.imgPokemon{
+  margin-top: -20px;
+  margin-left: -12px;
+}
+
+@media all {
+	div#pokedex
+	{
+    float: left;
+    padding-left: 20px;
+		width: 750px;
+		margin: 50px auto 0 auto;
+	}
 }
