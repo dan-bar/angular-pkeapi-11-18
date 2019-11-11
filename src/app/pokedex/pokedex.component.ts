@@ -25,7 +25,5 @@ export class PokedexComponent implements OnInit {
   
   getPokedex() {
     this.pokemonApiService.getPokedex().subscribe(dados => this.pokedex = dados.results);
-  
   }
-
 }
