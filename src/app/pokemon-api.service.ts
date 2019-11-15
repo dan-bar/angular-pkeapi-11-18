@@ -15,8 +15,8 @@ export class PokemonApiService {
 
   }
 
-  getPokedex(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.urlAPI + "pokemon/?limit=151"); 
+  getPokedex(): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(this.urlAPI + "pokemon/?limit=807"); 
   }
   
   getPokemon():Observable<Pokemon> {
@@ -28,6 +28,6 @@ export class PokemonApiService {
   }
 
   getPokemonById(id:number):Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.urlAPI + "pokemon/" + id+1);
+    return this.http.get<Pokemon[]>(this.urlAPI + "pokemon/" + id);
   }
 }

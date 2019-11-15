@@ -1,3 +1,4 @@
+<button style="height: 40px; width: 100px; margin-left: 47%; text-decoration: none; background-color:#0066b3; border-color: #0066b3; color: white; font-size: 20px" [routerLink]="['']">Voltar</button>
 <div id="pokedex">
   <div id="left">
     <div id="logo"></div>
@@ -23,7 +24,7 @@
         <div id="buttontopPicture2"></div>
       </div>
       <div id="picture">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/200653/psykokwak.gif" alt="psykokwak" height="170" />
+        <img src="{{pokemon.img}}" alt="Pokemon" height="170" />
       </div>
       <div id="buttonbottomPicture"></div>
       <div id="speakers">
@@ -56,9 +57,9 @@
   </div>
   <div id="right">
     <div id="stats"><br/>
-      <strong>Name:</strong> {{pokemon.name}}<br/><br/>
-      <strong>Height:</strong> {{pokemon.height}}<br/><br/>
-      <strong>Weight:</strong> {{pokemon.weight}}<br/><br/>
+      <strong>Name:</strong> {{pokemonAsync.name}}<br/><br/>
+      <strong>Height:</strong> {{pokemonAsync.height}}<br/><br/>
+      <strong>Weight:</strong> {{pokemonAsync.weight}}<br/><br/>
     </div>
     <div id="blueButtons1">
       <div class="blueButton"></div>

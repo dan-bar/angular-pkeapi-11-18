@@ -6,10 +6,9 @@
 @media all {
 	div#pokedex
 	{
-    float: left;
-    margin-left: 20px;
-		width: 750px;
-		margin: 50px auto 0 auto;
+		width: 71%;
+    margin-top: 20px;
+    padding-left: 29%;
 	}
 
 	div#left

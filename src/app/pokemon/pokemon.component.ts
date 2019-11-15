@@ -11,19 +11,20 @@ import { ActivatedRoute } from '@angular/router';
 export class PokemonComponent implements OnInit {
   @Input() pokemon:Pokemon;
   pokemonAsync:Pokemon;
+  idRota: number;
 
-  constructor(private pokemonApiService:PokemonApiService) { }
+  constructor(private pokemonApiService:PokemonApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.setPokemon(this.pokemon);
+    this.getRoute();
     this.getPokemon();
   }
 
-  setPokemon(pokemon) {
-    this.pokemonApiService.setPokemon(pokemon.id);
+  getRoute(){
+    this.route.paramMap.subscribe(params =>this.idRota = +params.get('PokemonId'));
   }
 
   getPokemon() {
-    this.pokemonApiService.getPokemonById(this.pokemon).subscribe(data => this.pokemonAsync = data.results[0]);
+    this.pokemonApiService.getPokemonById(this.idRota).subscribe(data => this.pokemonAsync = data.results[0]);
   }
 }

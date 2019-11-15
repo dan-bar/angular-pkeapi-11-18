@@ -19,7 +19,7 @@ export class PokedexComponent implements OnInit {
     this.getPokedex();
   }
 
-  selectPokemon(pokemon) {
+  selectPokemon(pokemon:Pokemon) {
     this.pokemonApiService.setPokemon(pokemon);
   }
   
