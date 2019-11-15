@@ -9,20 +9,16 @@ export class PokemonApiService {
 
   private pokemonSelected = new BehaviorSubject(null);
 
-  private urlAPI = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+  private urlAPI = "https://pokeapi.co/api/v2/";
 
   constructor(private http: HttpClient) { 
 
   }
 
   getPokedex(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.urlAPI + "?limit=151"); 
+    return this.http.get<Pokemon[]>(this.urlAPI + "pokemon/?limit=151"); 
   }
-   
-  getGeneration():Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.urlAPI + "generation/" + id+1);
-
-  }
+  
   getPokemon():Observable<Pokemon> {
     return this.pokemonSelected;
   }
@@ -32,6 +28,6 @@ export class PokemonApiService {
   }
 
   getPokemonById(id:number):Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.urlAPI + "&results=1page" + id+1);
+    return this.http.get<Pokemon[]>(this.urlAPI + "pokemon/" + id+1);
   }
 }

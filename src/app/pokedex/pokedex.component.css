@@ -6,7 +6,10 @@
   text-align:center;
 }
 
-.aPokemons{
+.buttonPokemons{
+  background-color: transparent;
+  border-color: transparent;
+  color: #66acec;
   float: left;
   height: 100px;
   width: 80px;

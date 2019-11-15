@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { PokemonApiService } from '../pokemon-api.service';
 import { ActivatedRoute } from '@angular/router';
@@ -9,24 +9,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  pokemon:Pokemon;
+  @Input() pokemon:Pokemon;
   pokemonAsync:Pokemon;
-  idRota:number;
 
-
-  constructor(private pokemonApiService:PokemonApiService, private route: ActivatedRoute) { }
+  constructor(private pokemonApiService:PokemonApiService) { }
 
   ngOnInit() {
-    this.getRoute();
+    this.setPokemon(this.pokemon);
     this.getPokemon();
   }
 
+  setPokemon(pokemon) {
+    this.pokemonApiService.setPokemon(pokemon.id);
+  }
+
   getPokemon() {
-    this.pokemonApiService.getPokemonById(this.idRota).subscribe(data => this.pokemonAsync = data.results[0]);
+    this.pokemonApiService.getPokemonById(this.pokemon).subscribe(data => this.pokemonAsync = data.results[0]);
   }
-
-  getRoute() {
-    this.route.paramMap.subscribe(params => this.idRota = +params.get('idPokemon'));
-  }
-
 }

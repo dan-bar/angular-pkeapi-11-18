@@ -1,6 +1,7 @@
 <div class="divPokedex">
-  <a *ngFor="let pokemon of pokedex; let pokemonId = index" class="aPokemons">
+  <button class="buttonPokemons" *ngFor="let pokemon of pokedex; let pokemonId = index" (click)="selectPokemon(pokemon)">
     <label class="lblPokemonName">{{pokemon.name}}</label>
     <img class="imgPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonId+1}}.png"/>
-  </a>
+  </button>
 </div>
+<app-pokemon [pokemon]="pokemonSelected"></app-pokemon>
