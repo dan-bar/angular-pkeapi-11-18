@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  @Input() pokemon:Pokemon;
-  pokemonAsync:Pokemon;
+  pokemonS:Pokemon;
+  pokeSprite: string;
   idRota: number;
 
   constructor(private pokemonApiService:PokemonApiService, private route: ActivatedRoute) { }
@@ -18,13 +18,14 @@ export class PokemonComponent implements OnInit {
   ngOnInit() {
     this.getRoute();
     this.getPokemon();
+    console.log(this.pokemonS);
   }
 
   getRoute(){
-    this.route.paramMap.subscribe(params =>this.idRota = +params.get('PokemonId'));
+    this.route.paramMap.subscribe(params =>this.idRota = +params.get('idPokemon'));
   }
 
   getPokemon() {
-    this.pokemonApiService.getPokemonById(this.idRota).subscribe(data => this.pokemonAsync = data.results[0]);
+    this.pokemonApiService.getPokemonById(this.idRota).subscribe(pokemon => {this.pokemonS = pokemon.results; this.pokeSprite = this.pokemonS.getPic()});
   }
 }

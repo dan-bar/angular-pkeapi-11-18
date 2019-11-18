@@ -11,7 +11,6 @@ import { PokemonApiService } from '../pokemon-api.service';
 export class PokedexComponent implements OnInit {
 
   pokedex:Pokemon[];
-  pokemonSelected:Pokemon;
 
   constructor(private pokemonApiService: PokemonApiService) { }
 

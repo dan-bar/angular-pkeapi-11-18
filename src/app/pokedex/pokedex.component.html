@@ -1,5 +1,5 @@
 <div class="divPokedex" *ngFor="let pokemon of pokedex; index as pokemonId">
-  <a class="aPokemons" [routerLink]="['/pokedex', pokemonId]">
+  <a class="aPokemons" [routerLink]="['/pokedex', pokemonId+1]">
     <label class="lblPokemonName">{{pokemon.name}}</label>
     <img class="imgPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonId+1}}.png"/>
   </a>
