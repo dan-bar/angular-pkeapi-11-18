@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PokemonComponent implements OnInit {
   pokemonS:Pokemon;
-  pokeSprite: string;
   idRota: number;
 
   constructor(private pokemonApiService:PokemonApiService, private route: ActivatedRoute) { }
@@ -26,6 +25,6 @@ export class PokemonComponent implements OnInit {
   }
 
   getPokemon() {
-    this.pokemonApiService.getPokemonById(this.idRota).subscribe(pokemon => {this.pokemonS = pokemon.results; this.pokeSprite = this.pokemonS.getPic()});
+    this.pokemonApiService.getPokemonById(this.idRota).subscribe(pokemon => this.pokemonS = pokemon);
   }
 }
